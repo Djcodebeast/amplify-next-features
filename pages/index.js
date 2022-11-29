@@ -23,10 +23,6 @@ export default function Home() {
       title: "Middleware "
     },
     {
-      href: "/routing",
-      title: "Using Next Link"
-    },
-    {
       href: "/apirouting",
       title: "API Routing"
     },

@@ -1,18 +1,21 @@
 import Image from "next/image"
-import Link from "next/link"
 
 const getStaticprops = ({ product }) => {
     return (
 
         <div className="my-12">
+            <h2 className='text-4xl font-extrabold dark:text-gray-900'> Static Site Generation with <code>getStaticProps()</code> </h2>
             {product.map(pr => (
                 <div
-                    key={pr.id}>
+                    key={pr.id}
+                    className="border-2 shadow-sm border-gray-200 rounded p-3 space-y-2 my-4"
+                >
                     <Image
                         width={700}
                         height={500}
                         alt={'image'}
                         src={pr.image}
+                        className="m-auto"
                         unoptimized
                     />
 

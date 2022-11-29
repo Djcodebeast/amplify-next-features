@@ -8,13 +8,11 @@ const getStaticprops = ({ product }) => {
         <div className="my-12">
 
             {product.map(pr => (
-                <div>
-
+                <div className="border-2 shadow-sm border-gray-200 rounded p-3 space-y-4 my-4" key={pr.id}>
                     <p> Title: {pr.title}</p>
                     <p> Description: {pr.description}</p>
 
-
-                    <p> {pr.price}</p>
+                    <p> ${pr.price}</p>
 
                     <Link href={`products/${pr.id}`} className='font-medium text-blue-600 dark:text-blue-500 hover:underline'>
                         <p> Get here</p>
