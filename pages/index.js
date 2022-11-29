@@ -20,7 +20,7 @@ export default function Home() {
     },
     {
       href: "/redirect",
-      title: "Middleware "
+      title: "Middleware - clicking on this will redirect you to /product"
     },
     {
       href: "/apirouting",
