@@ -1,5 +1,3 @@
-import Image from "next/image"
-
 const getServersideprops = ({ data }) => {
     return (
         <div className="my-12">
@@ -7,18 +5,10 @@ const getServersideprops = ({ data }) => {
 
             {data.map(dt => (
                 <div className="border-2 shadow-sm border-gray-200 rounded p-3 space-y-2 my-4">
-                    <h3 className='my-4 text-2xl text-gray-800'> {dt.title}</h3>
-                    <p className='my-4 text-lg text-gray-800 font-bold'> ${dt.price}</p>
-                    <p className='my-4 text-lg text-gray-500'> {dt.description}</p>
-                    <p className='my-4 text-lg text-gray-800'> {dt.category}</p>
-                    <Image
-                        width="600"
-                        alt="image"
-                        height="400"
-                        src={dt.image}
-                        className="m-auto"
-                        unoptimized
-                    />
+                    <h3 className='my-4 text-2xl text-gray-800'> {dt.name.firstname} {dt.name.lastname}</h3>
+                    <p className='my-4 text-lg text-gray-800 font-bold'> {dt.email}</p>
+                    <p className='my-4 text-lg text-gray-500 uppercase'> {dt.address.city}</p>
+                    <p className='my-4 text-lg text-gray-800'> {dt.phone}</p>
                 </div>
             ))}
         </div>
@@ -27,7 +17,7 @@ const getServersideprops = ({ data }) => {
 
 export async function getServerSideProps() {
     // Fetch data from external API
-    const res = await fetch('https://fakestoreapi.com/products')
+    const res = await fetch('https://fakestoreapi.com/users')
     const data = await res.json()
     // Pass data to the page via props
     return { props: { data } }

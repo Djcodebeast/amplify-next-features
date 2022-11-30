@@ -8,11 +8,7 @@ export default function Home() {
     },
     {
       href: "/products",
-      title: "Get Static Paths"
-    },
-    {
-      href: "/getStaticProps",
-      title: "Get Static Props"
+      title: "Get Static Paths and Static Props"
     },
     {
       href: "/image",

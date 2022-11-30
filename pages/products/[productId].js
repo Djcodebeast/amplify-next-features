@@ -1,12 +1,6 @@
-import { useRouter } from 'next/router'
 import Image from 'next/image'
 
 const getStaticPathData = (product) => {
-    const router = useRouter()
-
-    if (router.isFallback) {
-        return <div>Loading...</div>
-    }
     return (
         <div className="my-12">
             <h2 className='text-4xl font-extrabold dark:text-gray-900'> {product.product?.title} </h2>
@@ -20,12 +14,7 @@ const getStaticPathData = (product) => {
         </div>
     )
 }
-
-
-
 export default getStaticPathData;
-
-
 export async function getStaticProps(context) {
     const { params } = context
 
@@ -56,6 +45,6 @@ export async function getStaticPaths() {
 
     return {
         paths,
-        fallback: false
+        fallback: true
     }
 }
