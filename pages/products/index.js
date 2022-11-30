@@ -1,12 +1,8 @@
-import Image from "next/image"
 import Link from "next/link"
-
-
 const getStaticprops = ({ product }) => {
     return (
 
         <div className="my-12">
-
             {product.map(pr => (
                 <div className="border-2 shadow-sm border-gray-200 rounded p-3 space-y-4 my-4" key={pr.id}>
                     <p> Title: {pr.title}</p>
@@ -20,14 +16,10 @@ const getStaticprops = ({ product }) => {
 
                 </div>
             ))
-
-
             }
-
         </div>
     )
 }
-
 export async function getStaticProps() {
     // Run API calls in parallel
     const productsResponse = await fetch('https://fakestoreapi.com/products')
