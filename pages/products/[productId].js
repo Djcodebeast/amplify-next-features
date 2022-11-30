@@ -8,7 +8,7 @@ const getStaticPathData = (product) => {
                 width={700}
                 height={500}
                 alt={'image'}
-                src={product?.product.image}
+                src={product?.product?.image}
                 unoptimized
             />
         </div>
@@ -30,7 +30,6 @@ export async function getStaticProps(context) {
         }
     }
 }
-
 export async function getStaticPaths() {
     const response = await fetch('https://fakestoreapi.com/products')
     const data = await response.json()
